@@ -53,7 +53,7 @@ public class CartResources {
                 cartItem.setQuantity(cartItem.getQuantity() + 1);
                 cartItem.setTotalPrice(product.getProductPrice()*cartItem.getQuantity());
                 cartItemService.addCartItem(cartItem);
-
+                System.out.println("product added");
                 return;
             }
         }
@@ -65,13 +65,8 @@ public class CartResources {
         cartItem.setCart(cart);
         cartItemService.addCartItem(cartItem);
         
-        
+        System.out.println("same product");
     }
-    
-    
-    
-    
-    
     
     @RequestMapping(value = "/remove/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
